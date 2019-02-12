@@ -12,6 +12,21 @@
 npm i -g http-server
 ```
 
+1. If you want to connect to your function running locally, go to your function's local.settings.json file and change it to include CORS settings:
+
+```json
+    {
+        "IsEncrypted": false,
+        "Values": {
+            "AzureWebJobsStorage": "",
+            "FUNCTIONS_WORKER_RUNTIME": "node",
+        },
+        "Host": {
+            "CORS":"*"
+        }
+    }
+```
+
 ### Extra steps
 
 1. Deploy this as a static website in the cloud. You can use Azure Blob Storage following [steps here](https://aka.ms/static-nceu18)
